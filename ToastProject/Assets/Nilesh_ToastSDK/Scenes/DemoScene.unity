@@ -954,7 +954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 092ece8fd40900f48bf285e9b116b89b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: Hello from Toast SDK
+  message: Hello from Nilesh's Toast SDK
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
