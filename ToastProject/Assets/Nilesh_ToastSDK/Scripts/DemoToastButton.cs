@@ -8,4 +8,8 @@ public class DemoToastButton : MonoBehaviour
     {
         Toast.Show(message);
     }
+    public void ShowCustomToast()
+    {
+        Toast.ShowCustomToast(message);
+    }
 }

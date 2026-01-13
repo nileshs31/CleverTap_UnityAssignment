@@ -5,6 +5,7 @@ using UnityEngine;
 public static class Toast
 {
     private static IToastPlatform _platform;
+    private static UnityToastManager _unityToastManager;
 
     static Toast()
     {
@@ -23,6 +24,23 @@ public static class Toast
             return;
 
         _platform.Show(message);
+    }
+
+    public static void ShowCustomToast(string message)
+    {
+        if (string.IsNullOrEmpty(message))
+            return;
+
+        if (_unityToastManager == null)
+            _unityToastManager = Object.FindObjectOfType<UnityToastManager>();
+
+        if (_unityToastManager == null)
+        {
+            Debug.LogWarning("UnityToastManager not found in scene.");
+            return;
+        }
+
+        _unityToastManager.Show(message);
     }
 }
 
