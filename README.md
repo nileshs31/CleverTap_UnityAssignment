@@ -134,7 +134,7 @@ This project demonstrates:
 - Unit testing with proper assembly separation
 
 ## Full Documentation
-- https://docs.google.com/document/d/1oi3OaTYsUXWoLioW3PnAKWp0dhAsa4G_8J24szn7UDk/edit?usp=sharing
+https://docs.google.com/document/d/1oi3OaTYsUXWoLioW3PnAKWp0dhAsa4G_8J24szn7UDk/edit?usp=sharing
 
 ## Screen Recording Videos
 
