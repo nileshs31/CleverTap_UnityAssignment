@@ -52,6 +52,86 @@ This submission contains **two Unity projects**:
 #### Single Public API
 - Platform handling is fully abstracted internally
 
+## Weather App
+
+### Features
+- Fetches latitude & longitude using Unity Location Services
+- Uses **Open-Meteo API** to fetch weather data
+- Displays:
+  - Latitude
+  - Longitude
+  - Temperature
+- Shows results using:
+  - Native Toast
+  - Custom Unity Toast
+
+---
+
+### Responsibilities
+
+**LocationService**
+- Handles runtime permissions
+- Provides fallback coordinates if location is unavailable
+
+**WeatherService**
+- Makes network request
+- Parses temperature from API response
+
+**WeatherUIController**
+- Connects UI → services → Toast SDK
+
+---
+
+## Unit Testing
+
+### Framework
+- Unity Test Framework (NUnit)
+- EditMode tests
+
+### Coverage
+- Weather JSON parsing
+- Valid responses
+- Missing or malformed data
+- Edge cases:
+  - Empty arrays
+  - Missing fields
+
+### Why EditMode Tests
+- Fast execution
+- No scene required
+- No network dependency
+- Platform-independent
+
+---
+
+## Build & Platform Notes
+
+### Android
+- Tested on a physical Android device
+- Verified:
+  - Native Android Toast
+  - Custom Unity Toast
+
+### iOS
+- Tested on iOS Simulator via Xcode
+- Uses `.mm` native plugin (UIKit-based toast)
+- Location permission handled via `Info.plist`
+
+### Editor
+- Toast calls logged to the Unity Console
+
+---
+
+## Build Notes
+
+Both the **Toast SDK** and the **Weather App** are production-ready and extensible.
+
+This project demonstrates:
+- Clean SDK architecture
+- Cross-platform abstraction
+- Native plugin integration
+- Practical SDK usage in Unity
+- Unit testing with proper assembly separation
 
 ## Full Documentation with Screenshots and Video Recordings
 - https://docs.google.com/document/d/1oi3OaTYsUXWoLioW3PnAKWp0dhAsa4G_8J24szn7UDk/edit?usp=sharing
