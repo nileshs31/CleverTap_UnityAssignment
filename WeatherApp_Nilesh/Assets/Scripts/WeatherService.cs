@@ -49,6 +49,22 @@ public class WeatherService : MonoBehaviour
         }
     }
 
+    public float ParseTemperatureFromJson(string json)
+    {
+        WeatherResponse response =
+            JsonUtility.FromJson<WeatherResponse>(json);
+
+        if (response == null ||
+            response.daily == null ||
+            response.daily.temperature_2m_max == null ||
+            response.daily.temperature_2m_max.Length == 0)
+        {
+            throw new System.Exception("Invalid weather data");
+        }
+
+        return response.daily.temperature_2m_max[0];
+    }
+
     #region JSON Models
 
     [Serializable]
